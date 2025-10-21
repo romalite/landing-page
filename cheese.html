@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cheese Catalog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/catalog.css" />
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <a href="main.html" class="back-btn" aria-label="Go back">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M15 18l-6-6 6-6"></path>
+                </svg>
+                <span>Go Back</span>
+            </a>
+            <h1>Cheese Catalog</h1>
+            <p>Curated selection — delicious cheeses, origins, and quick actions</p>
+        </header>
+
+        <div class="catalog">
+            <div class="cheese" data-full-desc="Italian Parmesan with a rich, nutty flavor and firm texture. Excellent for grating and pasting.">
+                
+                <div class="img-wrap">
+                    <img src="img/Parmigiano Reggiano.png" alt="Parmigiano Reggiano">
+                </div>
+                <div class="cheese-name">Parmigiano Reggiano</div>
+                <div class="cheese-desc">24 months • Italy</div>
+
+                <div class="meta">
+                    <div class="price">$15</div>
+                    <div class="badge">200 g</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-buy">Buy</button>
+                    <button class="btn btn-details">Details</button>
+                </div>
+            </div>
+
+            <div class="cheese" data-full-desc="A soft French Brie with a creamy texture and a thin rind. Pairs perfectly with wine.">
+                <div class="img-wrap">
+                    <img src="img/Brie-Soft.png" alt="Brie">
+                </div>
+                <div class="cheese-name">Brie</div>
+                <div class="cheese-desc">Soft • 6 months • France</div>
+
+                <div class="meta">
+                    <div class="price">$12</div>
+                    <div class="badge">250 g</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-buy">Buy</button>
+                    <button class="btn btn-details">Details</button>
+                </div>
+            </div>
+
+            <div class="cheese" data-full-desc="Dutch Gouda is full-bodied, slightly sweet and ideal for slicing and melting.">
+                <div class="img-wrap">
+                    <img src="img/Gouda.png" alt="Gouda">
+                </div>
+                <div class="cheese-name">Gouda</div>
+                <div class="cheese-desc">Semi-hard • 12 months • Netherlands</div>
+
+                <div class="meta">
+                    <div class="price">$10</div>
+                    <div class="badge">300 g</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-buy">Buy</button>
+                    <button class="btn btn-details">Details</button>
+                </div>
+            </div>
+
+            <div class="cheese" data-full-desc="Swiss Emmental with characteristic holes, soft, and a nutty flavor. Excellent for fondue.">
+                <div class="img-wrap">
+                    <img src="img/Emmental.png" alt="Emmental">
+                </div>
+                <div class="cheese-name">Emmental</div>
+                <div class="cheese-desc">Semi-hard • 8 months • Switzerland</div>
+
+                <div class="meta">
+                    <div class="price">$14</div>
+                    <div class="badge">250 g</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-buy">Buy</button>
+                    <button class="btn btn-details">Details</button>
+                </div>
+            </div>
+
+            <div class="cheese" data-full-desc="Chevre goat cheese has a soft, creamy texture and a delicate acidity, making it excellent in salads.">
+                <div class="img-wrap">
+                    <img src="img/Chèvre.webp" alt="Chèvre">
+                </div>
+                <div class="cheese-name">Chèvre</div>
+                <div class="cheese-desc">Soft • 3 months • France</div>
+
+                <div class="meta">
+                    <div class="price">$11</div>
+                    <div class="badge">200 g</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-buy">Buy</button>
+                    <button class="btn btn-details">Details</button>
+                </div>
+            </div>
+
+            <div class="cheese" data-full-desc="Italian Mozzarella, soft and fresh, ideal for pizza and salads.">
+                <div class="img-wrap">
+                    <img src="img/Mozzarella.jpg" alt="Mozzarella">
+                </div>
+                <div class="cheese-name">Mozzarella</div>
+                <div class="cheese-desc">Fresh • 1 week • Italy</div>
+
+                <div class="meta">
+                    <div class="price">$9</div>
+                    <div class="badge">250 g</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-buy">Buy</button>
+                    <button class="btn btn-details">Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="close" id="modalClose" title="Close">&times;</button>
+            <div class="modal-left">
+                <img id="modalImg" src="" alt="">
+            </div>
+            <div class="modal-right">
+                <h2 id="modalTitle">Name of cheese</h2>
+                <div class="small" id="modalSub">Категория • Срок • Страна</div>
+
+                <div class="meta" style="margin-top:6px">
+                    <div class="price" id="modalPrice">$0</div>
+                    <div class="badge" id="modalBadge">200 g</div>
+                </div>
+
+                <div class="full-desc" id="modalDesc">Full description of cheese.</div>
+
+                <div class="modal-actions">
+                    <button class="btn btn-buy" id="modalBuy">Buy</button>
+                    <button class="btn" id="modalClose2">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            const overlay = document.getElementById('modalOverlay');
+            const modalImg = document.getElementById('modalImg');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalSub = document.getElementById('modalSub');
+            const modalPrice = document.getElementById('modalPrice');
+            const modalBadge = document.getElementById('modalBadge');
+            const modalDesc = document.getElementById('modalDesc');
+            const closeBtns = [document.getElementById('modalClose'), document.getElementById('modalClose2')];
+            const buyBtn = document.getElementById('modalBuy');
+
+            function openModalFromCheese(cheeseEl){
+                const img = cheeseEl.querySelector('.img-wrap img');
+                const name = cheeseEl.querySelector('.cheese-name')?.textContent || '';
+                const sub = cheeseEl.querySelector('.cheese-desc')?.textContent || '';
+                const price = cheeseEl.querySelector('.price')?.textContent || '';
+                const badge = cheeseEl.querySelector('.badge')?.textContent || '';
+                const full = cheeseEl.dataset.fullDesc || cheeseEl.querySelector('.cheese-desc')?.textContent || '';
+
+                modalImg.src = img?.src || '';
+                modalImg.alt = img?.alt || name;
+                modalTitle.textContent = name;
+                modalSub.textContent = sub;
+                modalPrice.textContent = price;
+                modalBadge.textContent = badge;
+                modalDesc.textContent = full;
+
+                overlay.classList.add('open');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal(){
+                overlay.classList.remove('open');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            document.querySelectorAll('.btn-details').forEach(btn=>{
+                btn.addEventListener('click', function(){
+                    const cheese = this.closest('.cheese');
+                    if(!cheese) return;
+                    openModalFromCheese(cheese);
+                });
+            });
+
+            closeBtns.forEach(b=> b && b.addEventListener('click', closeModal));
+            overlay.addEventListener('click', function(e){
+                if(e.target === overlay) closeModal();
+            });
+            document.addEventListener('keydown', function(e){
+                if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+            });
+
+            buyBtn.addEventListener('click', function(){
+                const name = modalTitle.textContent;
+                alert(name + ' — added to cart (demo)');
+                closeModal();
+            });
+        })();
+    </script>
+</body>
+</html>

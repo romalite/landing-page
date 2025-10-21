@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Wine Delivery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/catalog.css" />
+    <style>
+        /* Основной стиль страницы доставки */
+        .delivery-header {
+            text-align: center;
+            margin: 50px 20px 30px;
+        }
+        .delivery-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .delivery-header p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .delivery-section {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #f9f9f9;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .delivery-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .delivery-section p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .delivery-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+        .delivery-list li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .delivery-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #6b4e31;
+            font-weight: bold;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .contact-info a {
+            color: #6b4e31;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <a href="main.html" class="back-btn" aria-label="Go back">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M15 18l-6-6 6-6"></path>
+                </svg>
+                <span>Go Back</span>
+            </a>
+            <h1>Wine Delivery</h1>
+            <p>Fast, reliable, and safe delivery right to your door</p>
+        </header>
+
+        <div class="delivery-section">
+            <h2>Delivery Options</h2>
+            <p>We offer a variety of delivery options to suit your needs, ensuring your wine arrives fresh and in perfect condition.</p>
+            <ul class="delivery-list">
+                <li>Standard Delivery: 3-5 business days</li>
+                <li>Express Delivery: 1-2 business days</li>
+                <li>Weekend Delivery: select Saturday or Sunday at checkout</li>
+                <li>International Shipping: available to select countries, 7-14 days</li>
+            </ul>
+        </div>
+
+        <div class="delivery-section">
+            <h2>Packaging & Safety</h2>
+            <p>Each bottle is carefully packed in our reinforced, eco-friendly packaging to prevent damage during transit. Fragile items are marked and handled with extra care.</p>
+        </div>
+
+        <div class="delivery-section">
+            <h2>Shipping Costs</h2>
+            <ul class="delivery-list">
+                <li>Orders under $50: $5 flat rate</li>
+                <li>Orders $50–$100: $3 flat rate</li>
+                <li>Orders over $100: Free standard delivery</li>
+            </ul>
+        </div>
+
+        <div class="delivery-section">
+            <h2>Contact & Support</h2>
+            <p>If you have any questions regarding your order or delivery, our support team is ready to assist you:</p>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:support@winecatalog.com">famiglabusiness@gmail.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

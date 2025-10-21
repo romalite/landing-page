@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru"></html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Wine Catalog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/catalog.css" />
+</head>
+<body>
+    <div class="wrap">
+        <header>
+    
+
+            <a href="main.html" class="back-btn" aria-label="Go back">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M15 18l-6-6 6-6"></path>
+                </svg>
+                <span>Go Back</span>
+            </a>
+            <h1>Wine Catalog</h1>
+            <p>Curated selection — elegant cards, prices, and quick actions</p>
+        </header>
+
+        <div class="catalog"></div>
+            <div class="wine" data-full-desc="A vibrant wine with notes of red berries, tobacco, and velvety tannins. Ideal with roasted meats and mature cheeses.">
+                <div class="ribbon">Top seller</div>
+                <div class="img-wrap">
+                    <img src="img/BELAUJOLAS.png" alt="BELAUJOLAS">
+                </div>
+                <div class="wine-name">Beaujolais Reserve</div>
+                <div class="wine-desc">Red • 2018 • France</div>
+
+                <div class="meta">
+                    <div class="price">$28</div>
+                    <div class="badge">750 ml</div>
+                    <div class="rating">★★★★☆</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-buy">Buy</button>
+                    <button class="btn btn-details">Details</button>
+                </div>
+            </div>
+
+            <div class="wine" data-full-desc="A light white with citrus and floral notes, an excellent aperitif wine.">
+                <div class="img-wrap">
+                    <img src="img/BOURGOGNE.png" alt="BOURGOGNE">
+                </div>
+                <div class="wine-name">Bourgogne Blanc</div>
+                <div class="wine-desc">White • 2020 • Italy</div>
+
+                <div class="meta">
+                    <div class="price">$34</div>
+                    <div class="badge">750 ml</div>
+                    <div class="rating">★★★★☆</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-buy">Buy</button>
+                    <button class="btn btn-details">Details</button>
+                </div>
+            </div>
+
+            <div class="wine" data-full-desc="An exquisite pink wine with fruity aromas and fresh acidity.">
+                <div class="img-wrap">
+                    <img src="img/CHATEAU-PAVIE.png" alt="CHATEAU-PAVIE">
+                </div>
+                <div class="wine-name">Château Pavie Rosé</div>
+                <div class="wine-desc">Rosé • 2019 • Spain</div>
+
+                <div class="meta">
+                    <div class="price">$41</div>
+                    <div class="badge">750 ml</div>
+                    <div class="rating">★★★★★</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-buy">Buy</button>
+                    <button class="btn btn-details">Details</button>
+                </div>
+            </div>
+
+            <div class="wine" data-full-desc="A deep Chilean wine with notes of spice and dark fruit.">
+                <div class="img-wrap">
+                    <img src="img/CLAMOR.png" alt="CLAMOR">
+                </div>
+                <div class="wine-name">Clamor Reserve</div>
+                <div class="wine-desc">Red • 2017 • Chile</div>
+
+                <div class="meta">
+                    <div class="price">$22</div>
+                    <div class="badge">750 ml</div>
+                    <div class="rating">★★★☆☆</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-buy">Buy</button>
+                    <button class="btn btn-details">Details</button>
+                </div>
+            </div>
+
+            <div class="wine" data-full-desc="A refreshing white with hints of green apple and herbs.">
+                <div class="img-wrap">
+                    <img src="img/COTES-DU-RHONE.png" alt="COTES-DU-RHONE">
+                </div>
+                <div class="wine-name">Côtes du Rhône</div>
+                <div class="wine-desc">White • 2021 • Germany</div>
+
+                <div class="meta">
+                    <div class="price">$26</div>
+                    <div class="badge">750 ml</div>
+                    <div class="rating">★★★★☆</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-buy">Buy</button>
+                    <button class="btn btn-details">Details</button>
+                </div>
+            </div>
+
+            <div class="wine" data-full-desc="A sparkling wine with fine bubbles and notes of pear, ideal with desserts.">
+                <div class="img-wrap">
+                    <img src="img/CREEK-MERLOT.png" alt="CREEK-MERLOT">
+                </div>
+                <div class="wine-name">Creek Merlot</div>
+                <div class="wine-desc">Sparkling • 2016 • France</div>
+
+                <div class="meta">
+                    <div class="price">$38</div>
+                    <div class="badge">750 ml</div>
+                    <div class="rating">★★★★☆</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-buy">Buy</button>
+                    <button class="btn btn-details">Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="close" id="modalClose" title="Close">&times;</button>
+            <div class="modal-left">
+                <img id="modalImg" src="" alt="">
+            </div>
+            <div class="modal-right">
+                <h2 id="modalTitle">Название вина</h2>
+                <div class="small" id="modalSub">Категория • Год • Страна</div>
+
+                <div class="meta" style="margin-top:6px">
+                    <div class="price" id="modalPrice">$0</div>
+                    <div class="badge" id="modalBadge">750 ml</div>
+                    <div class="rating" id="modalRating">★★★★☆</div>
+                </div>
+
+                <div class="full-desc" id="modalDesc">Полное описание вина.</div>
+
+                <div class="modal-actions">
+                    <button class="btn btn-buy" id="modalBuy">Buy</button>
+                    <button class="btn" id="modalClose2">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            const overlay = document.getElementById('modalOverlay');
+            const modalImg = document.getElementById('modalImg');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalSub = document.getElementById('modalSub');
+            const modalPrice = document.getElementById('modalPrice');
+            const modalBadge = document.getElementById('modalBadge');
+            const modalRating = document.getElementById('modalRating');
+            const modalDesc = document.getElementById('modalDesc');
+            const closeBtns = [document.getElementById('modalClose'), document.getElementById('modalClose2')];
+            const buyBtn = document.getElementById('modalBuy');
+
+            function openModalFromWine(wineEl){
+                const img = wineEl.querySelector('.img-wrap img');
+                const name = wineEl.querySelector('.wine-name')?.textContent || '';
+                const sub = wineEl.querySelector('.wine-desc')?.textContent || '';
+                const price = wineEl.querySelector('.price')?.textContent || '';
+                const badge = wineEl.querySelector('.badge')?.textContent || '';
+                const rating = wineEl.querySelector('.rating')?.textContent || '';
+                const full = wineEl.dataset.fullDesc || wineEl.querySelector('.wine-desc')?.textContent || '';
+
+                modalImg.src = img?.src || '';
+                modalImg.alt = img?.alt || name;
+                modalTitle.textContent = name;
+                modalSub.textContent = sub;
+                modalPrice.textContent = price;
+                modalBadge.textContent = badge;
+                modalRating.textContent = rating;
+                modalDesc.textContent = full;
+
+                overlay.classList.add('open');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal(){
+                overlay.classList.remove('open');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            document.querySelectorAll('.btn-details').forEach(btn=>{
+                btn.addEventListener('click', function(){
+                    const wine = this.closest('.wine');
+                    if(!wine) return;
+                    openModalFromWine(wine);
+                });
+            });
+
+            closeBtns.forEach(b=> b && b.addEventListener('click', closeModal));
+            overlay.addEventListener('click', function(e){
+                if(e.target === overlay) closeModal();
+            });
+            document.addEventListener('keydown', function(e){
+                if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+            });
+
+            // example: Buy in modal simply alerts (hook to real flow)
+            buyBtn.addEventListener('click', function(){
+                const name = modalTitle.textContent;
+                alert(name + ' — added to cart (demo)');
+                closeModal();
+            });
+        })();
+    </script>
+</body>
+</html>

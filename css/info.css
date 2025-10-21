@@ -1,0 +1,127 @@
+:root{
+            --bg1: #f6efe9;
+            --bg2: #fffaf6;
+            --accent: #7b3f00;
+            --muted: #6b6b6b;
+            --card-bg: rgba(255,255,255,0.7);
+            --glass: rgba(255,255,255,0.55);
+            --shadow: 0 8px 30px rgba(27,31,35,0.08);
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: radial-gradient(1200px 600px at 10% 10%, #fff9f3 0%, rgba(255,250,245,0) 25%),
+                        radial-gradient(1000px 500px at 95% 90%, #fff6f0 0%, rgba(255,250,245,0) 25%),
+                        linear-gradient(180deg,var(--bg1),var(--bg2));
+            color:#2b2b2b;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            padding:36px 20px;
+        }
+
+        /* container matches catalog layout: wider, centered card with subtle shadow */
+        .container {
+            max-width: 1100px;
+            margin: 48px auto;
+            background: #fff6f0;
+            padding: 36px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(16,24,40,0.06);
+            border: 1px solid rgba(15,23,42,0.03);
+        }
+
+        /* top link styled like catalog breadcrumb / small button */
+        .container > p a {
+            display: inline-block;
+            color: var(--primary);
+            background: var(--glass);
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background .15s ease, transform .08s ease;
+        }
+        .container > p a:hover { background: rgba(37,99,235,0.12); transform: translateY(-1px); }
+
+        /* headings */
+        h1 {
+            color: var(--text);
+            margin: 8px 0 12px;
+            font-size: 28px;
+            letter-spacing: -0.01em;
+        }
+        h2 {
+            margin: 18px 0 12px;
+            color: #0f172a;
+            font-size: 18px;
+        }
+
+        /* body copy */
+        p {
+            line-height: 1.7;
+            margin-bottom: 16px;
+            color: #344054;
+            font-size: 15px;
+        }
+
+        /* team area styled like a product grid */
+        .team {
+            margin-top: 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        /* each team member looks like a catalog card */
+        .team-member {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px;
+            border-radius: 10px;
+            background: #fff9f3;
+            border: 1px solid rgba(15,23,42,0.04);
+            box-shadow: 0 4px 14px rgba(16,24,40,0.03);
+            transition: transform .12s ease, box-shadow .12s ease;
+            cursor: default;
+        }
+        .team-member:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(16,24,40,0.06);
+        }
+
+        /* avatar placeholder circle using first letter (keeps HTML unchanged) */
+        .team-member::before{
+            display: inline-block;
+            width: 52px;
+            height: 52px;
+            flex: 0 0 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(99,102,241,0.08));
+            border: 1px solid rgba(37,99,235,0.08);
+        }
+        .team-member img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* name and role */
+        .team-member span{
+            font-weight: 700;
+            color: var(--text);
+            font-size: 15px;
+        }
+        .team-member { flex-direction: column; align-items: flex-start; }
+        .team-member span + text, .team-member > *:not(span) { color: var(--muted); }
+
+        /* ensure readable spacing on small screens */
+        @media (max-width:640px){
+            .container { margin: 20px; padding: 20px; }
+            h1 { font-size: 22px; }
+            .team-member { padding: 12px; gap: 10px; }
+            .team-member::before { width: 44px; height: 44px; flex: 0 0 44px; }
+        }
