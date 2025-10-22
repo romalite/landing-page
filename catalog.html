@@ -6,11 +6,11 @@
     <title>Wine Catalog</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/catalog.css" />
+    
 </head>
 <body>
     <div class="wrap">
         <header>
-    
 
             <a href="main.html" class="back-btn" aria-label="Go back">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -21,6 +21,7 @@
             <h1>Wine Catalog</h1>
             <p>Curated selection — elegant cards, prices, and quick actions</p>
         </header>
+        <button id="cartToggle" class="cart-button">🛒 Cart</button>
 
         <div class="catalog"></div>
             <div class="wine" data-full-desc="A vibrant wine with notes of red berries, tobacco, and velvety tannins. Ideal with roasted meats and mature cheeses.">
@@ -38,8 +39,8 @@
                 </div>
 
                 <div class="actions">
-                    <button class="btn btn-buy">Buy</button>
-                    <button class="btn btn-details">Details</button>
+                    <button onclick="addToCart('Beaujolais Reserve', 28)" class="btn btn-buy">Buy</button>
+                    
                 </div>
             </div>
 
@@ -57,8 +58,8 @@
                 </div>
 
                 <div class="actions">
-                    <button class="btn btn-buy">Buy</button>
-                    <button class="btn btn-details">Details</button>
+                    <button onclick="addToCart('Bourgogne Blanc', 34)" class="btn btn-buy">Buy</button>
+                    
                 </div>
             </div>
 
@@ -76,8 +77,8 @@
                 </div>
 
                 <div class="actions">
-                    <button class="btn btn-buy">Buy</button>
-                    <button class="btn btn-details">Details</button>
+                    <button onclick="addToCart('Château Pavie Rosé', 41)" class="btn btn-buy">Buy</button>
+                    
                 </div>
             </div>
 
@@ -95,8 +96,8 @@
                 </div>
 
                 <div class="actions">
-                    <button class="btn btn-buy">Buy</button>
-                    <button class="btn btn-details">Details</button>
+                    <button onclick="addToCart('Clamor Reserve', 22)" class="btn btn-buy">Buy</button>
+                    
                 </div>
             </div>
 
@@ -114,8 +115,8 @@
                 </div>
 
                 <div class="actions">
-                    <button class="btn btn-buy">Buy</button>
-                    <button class="btn btn-details">Details</button>
+                    <button onclick="addToCart('Côtes du Rhône', 26)" class="btn btn-buy">Buy</button>
+                    
                 </div>
             </div>
 
@@ -133,105 +134,29 @@
                 </div>
 
                 <div class="actions">
-                    <button class="btn btn-buy">Buy</button>
-                    <button class="btn btn-details">Details</button>
+                    <button onclick="addToCart('Creek Merlot', 38)" class="btn btn-buy">Buy</button>
+                
                 </div>
             </div>
+
+            
+            <!-- Выдвижная корзина -->
+        <div id="cartPanel" class="cart-panel">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button id="closeCart" class="close-btn">✕</button>
+            </div>
+                <ul id="cart"></ul>
+            <div class="cart-footer">
+                 <p><strong>Total:</strong> $<span id="cartTotal">0.00</span></p>
+                 <button id="checkoutBtn">Checkout</button>
+                 <button id="clearCartBtn">Clear</button>
+            </div>
+            </div>
+            <div id="overlay" class="overlay"></div>
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
-        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-            <button class="close" id="modalClose" title="Close">&times;</button>
-            <div class="modal-left">
-                <img id="modalImg" src="" alt="">
-            </div>
-            <div class="modal-right">
-                <h2 id="modalTitle">Название вина</h2>
-                <div class="small" id="modalSub">Категория • Год • Страна</div>
-
-                <div class="meta" style="margin-top:6px">
-                    <div class="price" id="modalPrice">$0</div>
-                    <div class="badge" id="modalBadge">750 ml</div>
-                    <div class="rating" id="modalRating">★★★★☆</div>
-                </div>
-
-                <div class="full-desc" id="modalDesc">Полное описание вина.</div>
-
-                <div class="modal-actions">
-                    <button class="btn btn-buy" id="modalBuy">Buy</button>
-                    <button class="btn" id="modalClose2">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        (function(){
-            const overlay = document.getElementById('modalOverlay');
-            const modalImg = document.getElementById('modalImg');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalSub = document.getElementById('modalSub');
-            const modalPrice = document.getElementById('modalPrice');
-            const modalBadge = document.getElementById('modalBadge');
-            const modalRating = document.getElementById('modalRating');
-            const modalDesc = document.getElementById('modalDesc');
-            const closeBtns = [document.getElementById('modalClose'), document.getElementById('modalClose2')];
-            const buyBtn = document.getElementById('modalBuy');
-
-            function openModalFromWine(wineEl){
-                const img = wineEl.querySelector('.img-wrap img');
-                const name = wineEl.querySelector('.wine-name')?.textContent || '';
-                const sub = wineEl.querySelector('.wine-desc')?.textContent || '';
-                const price = wineEl.querySelector('.price')?.textContent || '';
-                const badge = wineEl.querySelector('.badge')?.textContent || '';
-                const rating = wineEl.querySelector('.rating')?.textContent || '';
-                const full = wineEl.dataset.fullDesc || wineEl.querySelector('.wine-desc')?.textContent || '';
-
-                modalImg.src = img?.src || '';
-                modalImg.alt = img?.alt || name;
-                modalTitle.textContent = name;
-                modalSub.textContent = sub;
-                modalPrice.textContent = price;
-                modalBadge.textContent = badge;
-                modalRating.textContent = rating;
-                modalDesc.textContent = full;
-
-                overlay.classList.add('open');
-                overlay.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeModal(){
-                overlay.classList.remove('open');
-                overlay.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-            }
-
-            document.querySelectorAll('.btn-details').forEach(btn=>{
-                btn.addEventListener('click', function(){
-                    const wine = this.closest('.wine');
-                    if(!wine) return;
-                    openModalFromWine(wine);
-                });
-            });
-
-            closeBtns.forEach(b=> b && b.addEventListener('click', closeModal));
-            overlay.addEventListener('click', function(e){
-                if(e.target === overlay) closeModal();
-            });
-            document.addEventListener('keydown', function(e){
-                if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
-            });
-
-            // example: Buy in modal simply alerts (hook to real flow)
-            buyBtn.addEventListener('click', function(){
-                const name = modalTitle.textContent;
-                alert(name + ' — added to cart (demo)');
-                closeModal();
-            });
-        })();
-    </script>
+<script src="Js/Cart.js"></script>
 </body>
 </html>

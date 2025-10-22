@@ -1,0 +1,133 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fffaf6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #7b3f00;
+  padding: 15px 50px;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  text-decoration: underline;
+}
+
+.cart-page {
+ position: fixed;
+  top: 80px;
+  right: 30px;
+  width: 300px;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid #ccc;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  z-index: 1000;
+}
+
+.cart-page h2 {
+  margin-top: 0;
+  font-size: 1.3em;
+  color: #7b3f00;
+  text-align: center;
+}
+#cart {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#cart li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95em;
+}
+
+.cart-total {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: right;
+}
+#cart-items {
+  margin-top: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.cart-item img {
+  width: 80px;
+  border-radius: 8px;
+}
+
+.cart-item-info {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.cart-item h3 {
+  margin: 0;
+}
+
+.cart-item span {
+  font-weight: bold;
+}
+
+.cartTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#checkoutBtn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  background-color: #7b3f00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#checkoutBtn:hover {
+  background-color: #9b4f00;
+}
